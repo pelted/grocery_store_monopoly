@@ -1,6 +1,10 @@
+<div align="center">
+Powered by [Vue](https://vuejs.org) **2.0** & [Bulma](http://bulma.io) **0.3**
+</div>
+
 # Grocery Store Monopoly Checker
 
-Simple JavaScript page to check your game pieces against the rare piece list.
+Simple JavaScript page to check your game pieces against the rare piece list. [Try it!](http://peltedvenom.com/grocery_store_monopoly/)
 
 Type in the three key characters. For example: if you have the pice **8B99D** then type in `8bd` or `8BD`. The notice will turn green and stop input when a needed game piece has been entered. Otherwise it will continue on by clearing the input and letting you continue.
 
