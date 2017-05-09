@@ -32,7 +32,7 @@
         <div class="container">
           <div class="nav-left">
             <div class="nav-item">
-              <a href="#">Albertsons Monopoly Game</a>
+              <a href="#">Grocery Store Monopoly Game</a>
             </div>
           </div>
         </div>
@@ -68,11 +68,15 @@
       <div class="container">
         <div class="content has-text-centered">
           <p>
-            <strong>Monopoly Game Checker</strong> by <a href="#">Chris</a>.
+            <strong>Monopoly Game Checker</strong> by <a href="https://twitter.com/pelted">Chris</a>.
+            Source code license <a class="icon" href="https://opensource.org/licenses/mit-license.php">MIT</a>.
           </p>
           <p>
-            <a class="icon" href="https://gist.github.com/pelted/4a7f96c60cc19a92a83bf26506bda64f">
+            <a class="icon" href="https://github.com/pelted/grocery_store_monopoly">
               <i class="fa fa-github"></i>
+            </a>
+            <a class="icon" href="https://twitter.com/pelted">
+              <i class="fa fa-twitter"></i>
             </a>
           </p>
         </div>
@@ -81,6 +85,10 @@
   </div>
 
   <script>
+    const FOUND_MESSAGE = 'STOP! You may have found a rare game piece!'
+    const START_MESSAGE = 'Enter the game piece short code: (ie. 8BC)'
+    const SORRY_MESSAGE = 'Sorry! Just a regular game piece...'
+
     var app = new Vue({
       el: '#app',
       data: {
@@ -93,17 +101,16 @@
       computed: {
         message: function () {
           if (this.foundRare) {
-            return 'STOP! You may have found a rare game piece!'
+            return FOUND_MESSAGE
           } else if (this.showNotice === false) {
-            return 'Enter the game piece short code: (ie. 8BC)'
+            return START_MESSAGE
           } else {
-            return 'Sorry! Just a regular game piece...'
+            return SORRY_MESSAGE
           }
         }
       },
       watch: {
         piece: function (newPiece) {
-          // this.check()
           this.validate()
         }
       },
